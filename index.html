@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>چای‌خانه‌ی گل نرگس | چای دم‌کشیده، آرام و سر وقت</title>
+<meta name="description" content="چای‌خانه‌ی گل؛ چای دمی، قهوه‌ی تازه و شیرینی خانگی در دل بازار قدیم">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0f2d33;--deep:#0a2227;--saffron:#e8a33d;--paper:#f3ead7;--pome:#c2415a;--mute:#9db5b4}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Vazirmatn,Tahoma,sans-serif;background:var(--ink);color:var(--paper);line-height:1.9;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--saffron);outline-offset:3px}
+.wrap{max-width:1050px;margin:auto;padding:0 22px}
+h1,h2{font-family:Lalezar,Vazirmatn,sans-serif;font-weight:400;line-height:1.25}
+h2{font-size:clamp(30px,6vw,46px);margin-bottom:8px}
+
+nav{position:fixed;inset:0 0 auto 0;z-index:10;background:rgba(10,34,39,.88);backdrop-filter:blur(8px)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px}
+.logo{font-family:Lalezar,sans-serif;font-size:24px;color:var(--saffron)}
+nav ul{display:flex;gap:20px;list-style:none;font-size:15px}
+nav ul a:hover{color:var(--saffron)}
+
+.hero{min-height:100vh;display:grid;grid-template-columns:1.2fr 1fr;align-items:center;gap:20px;padding-top:90px;padding-bottom:50px}
+.hero h1{font-size:clamp(46px,9vw,92px);margin-bottom:18px}
+.lead{max-width:30em;color:var(--mute);font-size:17px;margin-bottom:28px}
+.hero .txt>*{animation:up .8s both}
+.hero .txt>*:nth-child(2){animation-delay:.15s}
+.hero .txt>*:nth-child(3){animation-delay:.3s}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.btn{display:inline-block;background:var(--saffron);color:var(--deep);padding:12px 26px;border-radius:50px;font-weight:600;margin-left:10px;transition:transform .2s}
+.btn:hover{transform:scale(1.05)}
+.btn.ghost{background:none;color:var(--paper);border:2px solid var(--mute)}
+
+.art{display:grid;place-items:center;min-height:320px}
+.glass{width:130px;height:160px;position:relative;border-radius:10px 10px 60px 60px;border:3px solid rgba(255,255,255,.35);background:linear-gradient(180deg,rgba(255,255,255,.15) 0 18%,#c8741f 18%,#8f3d0c);box-shadow:inset 0 0 30px rgba(0,0,0,.4)}
+.glass::after{content:"";position:absolute;bottom:-20px;left:50%;transform:translateX(-50%);width:220px;height:22px;border-radius:50%;background:var(--saffron);box-shadow:0 16px 30px rgba(0,0,0,.5)}
+.steam span{position:absolute;bottom:100%;width:12px;height:70px;border-radius:50%;background:rgba(243,234,215,.55);filter:blur(9px);opacity:0;animation:rise 4s infinite ease-out}
+.steam span:nth-child(1){left:25%}
+.steam span:nth-child(2){left:48%;animation-delay:1.3s}
+.steam span:nth-child(3){left:70%;animation-delay:2.6s}
+@keyframes rise{0%{transform:translateY(25px) scaleX(1);opacity:0}30%{opacity:.8}100%{transform:translateY(-100px) scaleX(2.4);opacity:0}}
+
+section{padding:80px 0}
+.sub{color:var(--mute);margin-bottom:28px}
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+.tabs button{font:inherit;background:none;color:var(--paper);border:2px solid var(--mute);padding:6px 20px;border-radius:50px;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--pome);border-color:var(--pome)}
+.list{display:grid;grid-template-columns:1fr 1fr;column-gap:60px}
+.row{display:flex;align-items:flex-end;gap:10px;padding:12px 0}
+.row[hidden]{display:none}
+.row b{font-weight:600;font-size:17px}
+.row small{display:block;color:var(--mute);line-height:1.5}
+.dots{flex:1;border-bottom:2px dotted rgba(243,234,215,.3);margin-bottom:10px}
+.pr{color:var(--saffron);font-weight:600}
+
+.gal{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.gal svg{width:100%;height:auto;display:block;border-radius:14px}
+.gal figcaption{color:var(--mute);font-size:14px;margin-top:6px}
+
+.story{background:var(--paper);color:var(--deep)}
+.story .wrap{display:grid;grid-template-columns:1.3fr 1fr;gap:50px;align-items:start}
+.story p{font-size:17px;max-width:32em}
+.story h2{color:var(--pome)}
+dl{display:grid;grid-template-columns:auto 1fr;gap:6px 18px;border-top:3px solid var(--deep);padding-top:14px}
+dt{font-weight:600}
+
+form{display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:700px}
+label{display:grid;gap:4px;font-size:15px}
+input,select{font:inherit;padding:11px 14px;border-radius:10px;border:2px solid var(--mute);background:var(--deep);color:var(--paper)}
+form .btn{grid-column:1/-1;border:none;font:inherit;font-weight:600;cursor:pointer;justify-self:start}
+#msg{grid-column:1/-1;min-height:28px}
+#msg.err{color:#ff8fa3}
+#msg.ok{color:#9be3a6}
+
+footer{background:var(--deep);padding:36px 0;text-align:center;color:var(--mute)}
+
+@media(max-width:760px){
+.hero,.story .wrap,.list,form{grid-template-columns:1fr}
+.gal{grid-template-columns:1fr 1fr}
+.list{column-gap:0}
+nav ul{gap:12px;font-size:14px}
+.logo{font-size:20px}
+.art{order:-1;min-height:260px}
+.hero{padding-top:80px}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a class="logo" href="#">گل نرگس</a>
+    <ul>
+      <li><a href="#menu">منو</a></li>
+      <li><a href="#gallery">گالری</a></li>
+      <li><a href="#story">داستان</a></li>
+      <li><a href="#reserve">رزرو</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero wrap">
+  <div class="txt">
+    <h1>چای که<br>صبرش را<br>می‌شناسد</h1>
+    <p class="lead">  در دل بازار قدیم، سماورمان هیچ‌وقت خاموش نشده. چای دمی، قهوه‌ی تازه و شیرینی خانگی، سر ساعت و بی‌عجله.</p>
+    <p><a class="btn" href="#menu">دیدن منوی امروز</a><a class="btn ghost" href="#reserve">رزرو میز</a></p>
+  </div>
+  <div class="art" aria-hidden="true">
+    <div class="glass"><div class="steam"><span></span><span></span><span></span></div></div>
+  </div>
+</header>
+
+<section id="menu">
+  <div class="wrap">
+    <h2>منوی امروز</h2>
+    <p class="sub">قیمت‌ها به هزار تومان</p>
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-f="all">همه</button>
+      <button role="tab" aria-selected="false" data-f="tea">چای</button>
+      <button role="tab" aria-selected="false" data-f="coffee">قهوه</button>
+      <button role="tab" aria-selected="false" data-f="sweet">شیرینی</button>
+    </div>
+    <div class="list">
+      <div class="row" data-c="tea"><div><b>چای زعفرانی</b><small>چای ایرانی، زعفران و نبات</small></div><i class="dots"></i><span class="pr">۸۵</span></div>
+      <div class="row" data-c="tea"><div><b>چای هل و گل‌محمدی</b><small>دم‌کشیده با سماور زغالی</small></div><i class="dots"></i><span class="pr">۹۰</span></div>
+      <div class="row" data-c="tea"><div><b>دمنوش به‌لیمو</b><small>به‌لیمو، عسل و کمی دارچین</small></div><i class="dots"></i><span class="pr">۷۵</span></div>
+      <div class="row" data-c="tea"><div><b>سماور دونفره</b><small>یک سماور کوچک، دو استکان، نبات</small></div><i class="dots"></i><span class="pr">۲۱۰</span></div>
+      <div class="row" data-c="coffee"><div><b>اسپرسو</b><small>دو شات، دانه‌ی برشته‌ی روز</small></div><i class="dots"></i><span class="pr">۷۰</span></div>
+      <div class="row" data-c="coffee"><div><b>قهوه‌ی دمی V60</b><small>دمی تک‌منشأ، بدون شکر</small></div><i class="dots"></i><span class="pr">۱۱۰</span></div>
+      <div class="row" data-c="coffee"><div><b>لاته‌ی دارچین</b><small>شیر بخارداده و دارچین تازه</small></div><i class="dots"></i><span class="pr">۱۰۵</span></div>
+      <div class="row" data-c="coffee"><div><b>قهوه‌ی ترک</b><small>روی آتش ملایم، با فنجان کوچک</small></div><i class="dots"></i><span class="pr">۸۰</span></div>
+      <div class="row" data-c="sweet"><div><b>باقلوای خانگی</b><small>پسته و گلاب، هر روز تازه</small></div><i class="dots"></i><span class="pr">۹۵</span></div>
+      <div class="row" data-c="sweet"><div><b>کیک شیره‌ی انگور</b><small>با گردو، مناسب چای</small></div><i class="dots"></i><span class="pr">۱۰۰</span></div>
+      <div class="row" data-c="sweet"><div><b>نان‌خامه‌ای</b><small>خامه‌ی محلی و مربای بالنگ</small></div><i class="dots"></i><span class="pr">۸۵</span></div>
+      <div class="row" data-c="sweet"><div><b>حلوای زنجبیلی</b><small>روغن کرمانشاهی، سرو گرم</small></div><i class="dots"></i><span class="pr">۷۰</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="padding-top:0">
+  <div class="wrap">
+    <h2>گوشه‌ای از چای‌خانه</h2>
+    <p class="sub">هر چیزی که روی میز شما می‌آید.</p>
+    <div class="gal">
+
+      <figure>
+        <svg viewBox="0 0 200 150" role="img" aria-label="سماور مسی">
+          <rect width="200" height="150" fill="#12474f"/>
+          <ellipse cx="100" cy="136" rx="46" ry="6" fill="#0a2227"/>
+          <rect x="82" y="118" width="36" height="16" rx="3" fill="#8f3d0c"/>
+          <path d="M68 60 Q68 118 100 118 Q132 118 132 60 Z" fill="#c8741f"/>
+          <path d="M64 60 Q100 30 136 60 Z" fill="#e8a33d"/>
+          <rect x="94" y="22" width="12" height="14" rx="3" fill="#8f3d0c"/>
+          <circle cx="100" cy="20" r="5" fill="#e8a33d"/>
+          <rect x="132" y="82" width="22" height="6" rx="3" fill="#8f3d0c"/>
+          <circle cx="56" cy="80" r="9" fill="none" stroke="#e8a33d" stroke-width="4"/>
+        </svg>
+        <figcaption>سماور مسی، همیشه روشن</figcaption>
+      </figure>
+
+      <figure>
+        <svg viewBox="0 0 200 150" role="img" aria-label="استکان چای روی نعلبکی">
+          <rect width="200" height="150" fill="#5b2333"/>
+          <ellipse cx="100" cy="124" rx="54" ry="9" fill="#e8a33d"/>
+          <path d="M72 48 H128 Q128 114 100 114 Q72 114 72 48 Z" fill="#c8741f" stroke="#f3ead7" stroke-opacity=".55" stroke-width="3"/>
+          <path d="M72 48 H128 V58 H72 Z" fill="#f3ead7" opacity=".3"/>
+          <rect x="142" y="106" width="12" height="12" rx="2" fill="#f3ead7"/>
+        </svg>
+        <figcaption>چای زعفرانی با نبات</figcaption>
+      </figure>
+
+      <figure>
+        <svg viewBox="0 0 200 150" role="img" aria-label="فنجان قهوه از بالا">
+          <rect width="200" height="150" fill="#1b3b44"/>
+          <circle cx="100" cy="75" r="54" fill="#f3ead7"/>
+          <rect x="132" y="68" width="30" height="14" rx="7" fill="#fff"/>
+          <circle cx="100" cy="75" r="38" fill="#fff"/>
+          <circle cx="100" cy="75" r="31" fill="#5a3418"/>
+          <path d="M100 92 C80 78 84 62 100 70 C116 62 120 78 100 92Z" fill="#e9cfae"/>
+        </svg>
+        <figcaption>لاته‌ی دارچین</figcaption>
+      </figure>
+
+      <figure>
+        <svg viewBox="0 0 200 150" role="img" aria-label="باقلوا روی بشقاب">
+          <rect width="200" height="150" fill="#0f2d33"/>
+          <circle cx="100" cy="75" r="58" fill="#f3ead7"/>
+          <g fill="#e8a33d" stroke="#8f3d0c" stroke-width="2">
+            <path d="M100 28 L130 58 L100 88 L70 58Z"/>
+            <path d="M100 62 L130 92 L100 122 L70 92Z"/>
+          </g>
+          <g fill="#7fa650">
+            <circle cx="100" cy="58" r="4"/>
+            <circle cx="100" cy="92" r="4"/>
+          </g>
+        </svg>
+        <figcaption>باقلوای پسته‌ای خانگی</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <div>
+      <h2>داستان ما</h2>
+      <p>چای ما را هر صبح همان‌جا دم می‌کنیم و قهوه را هر هفته از یک برشته‌کاری کوچک می‌گیریم. اگر وقت دارید بنشینید؛ اگر ندارید، یک استکان ایستاده بخورید.</p>
+    </div>
+    <dl>
+      <dt>شنبه تا چهارشنبه</dt><dd>۸ صبح تا ۱۰ شب</dd>
+      <dt>پنجشنبه و جمعه</dt><dd>۹ صبح تا ۱۲ شب</dd>
+      <dt>نشانی</dt><dd>بازار قدیم   </dd>
+    </dl>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="wrap">
+    <h2>رزرو میز</h2>
+    <p class="sub">فرم را پر کنید تا برای تأیید با شما تماس بگیریم.</p>
+    <form id="rf" novalidate>
+      <label>نام <input name="fname" autocomplete="name"></label>
+      <label>شماره‌ی موبایل <input name="tel" type="tel" inputmode="numeric" placeholder="۰۹۱۲۳۴۵۶۷۸۹"></label>
+      <label>تاریخ <input name="date" id="date" type="date"></label>
+      <label>تعداد نفرات
+        <select name="guests"><option>۱ تا ۲ نفر</option><option>۳ تا ۴ نفر</option><option>۵ تا ۸ نفر</option></select>
+      </label>
+      <p id="msg" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit">ثبت درخواست رزرو</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>بازار قدیم · تلفن: ۰۲۱۰۰۰۰۰۰۰۰</p>
+  <p>© چای‌خانه‌ی گل نرگس (نمونه‌کار)</p>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tabs button');
+  const rows = document.querySelectorAll('.row');
+  tabs.forEach(b => b.addEventListener('click', () => {
+    tabs.forEach(t => t.setAttribute('aria-selected', t === b));
+    rows.forEach(r => r.hidden = b.dataset.f !== 'all' && r.dataset.c !== b.dataset.f);
+  }));
+
+  const f = document.getElementById('rf');
+  const msg = document.getElementById('msg');
+  const d = document.getElementById('date');
+  d.min = new Date().toISOString().split('T')[0];
+
+  const toEn = s => s.replace(/[۰-۹]/g, x => '۰۱۲۳۴۵۶۷۸۹'.indexOf(x));
+  function say(t, err) { msg.textContent = t; msg.className = err ? 'err' : 'ok'; }
+
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const n = f.fname.value.trim();
+    const t = toEn(f.tel.value.trim());
+    if (n.length < 2) return say('لطفاً نام خود را وارد کنید.', true);
+    if (!/^09\d{9}$/.test(t)) return say('شماره‌ی موبایل باید ۱۱ رقم باشد و با ۰۹ شروع شود.', true);
+    if (!d.value) return say('تاریخ مراجعه را انتخاب کنید.', true);
+    say(n + ' عزیز، درخواست رزرو شما ثبت شد. برای تأیید با شما تماس می‌گیریم.');
+    f.reset();
+  });
+</script>
+
+</body>
+</html>/>
+        </svg>
+        <figcaption>چای زعفرانی با نبات</figcaption>
+      </figure>
+
+      <figure>
+        <svg viewBox="0 0 200 150" role="img" aria-label="فنجان قهوه از بالا">
+          <rect width="200" height="150" fill="#1b3b44"/>
+          <circle cx="100" cy="75" r="54" fill="#f3ead7"/>
+          <rect x="132" y="68" width="30" height="14" rx="7" fill="#fff"/>
+          <circle cx="100" cy="75" r="38" fill="#fff"/>
+          <circle cx="100" cy="75" r="31" fill="#5a3418"/>
+          <path d="M100 92 C80 78 84 62 100 70 C116 62 120 78 100 92Z" fill="#e9cfae"/>
+        </svg>
+        <figcaption>لاته‌ی دارچین</figcaption>
+      </figure>
+
+      <figure>
+        <svg viewBox="0 0 200 150" role="img" aria-label="باقلوا روی بشقاب">
+          <rect width="200" height="150" fill="#0f2d33"/>
+          <circle cx="100" cy="75" r="58" fill="#f3ead7"/>
+          <g fill="#e8a33d" stroke="#8f3d0c" stroke-width="2">
+            <path d="M100 28 L130 58 L100 88 L70 58Z"/>
+            <path d="M100 62 L130 92 L100 122 L70 92Z"/>
+          </g>
+          <g fill="#7fa650">
+            <circle cx="100" cy="58" r="4"/>
+            <circle cx="100" cy="92" r="4"/>
+          </g>
+        </svg>
+        <figcaption>باقلوای پسته‌ای خانگی</figcaption>
+      </figure>
+
+    </div>
+  </div>
+</section>
+
+<section class="story" id="story">
+  <div class="wrap">
+    <div>
+      <h2>داستان ما</h2>
+      <p> ما را هر صبح همان‌جا دم می‌کنیم و قهوه را هر هفته از یک برشته‌کاری کوچک می‌گیریم. اگر وقت دارید بنشینید؛ اگر ندارید، یک استکان ایستاده بخورید.</p>
+    </div>
+    <dl>
+      <dt>شنبه تا چهارشنبه</dt><dd>۸ صبح تا ۱۰ شب</dd>
+      <dt>پنجشنبه و جمعه</dt><dd>۹ صبح تا ۱۲ شب</dd>
+      <dt>نشانی</dt><dd>بازار قدیم  </dd>
+    </dl>
+  </div>
+</section>
+
+<section id="reserve">
+  <div class="wrap">
+    <h2>رزرو میز</h2>
+    <p class="sub">فرم را پر کنید تا برای تأیید با شما تماس بگیریم.</p>
+    <form id="rf" novalidate>
+      <label>نام <input name="fname" autocomplete="name"></label>
+      <label>شماره‌ی موبایل <input name="tel" type="tel" inputmode="numeric" placeholder="۰۹۱۲۳۴۵۶۷۸۹"></label>
+      <label>تاریخ <input name="date" id="date" type="date"></label>
+      <label>تعداد نفرات
+        <select name="guests"><option>۱ تا ۲ نفر</option><option>۳ تا ۴ نفر</option><option>۵ تا ۸ نفر</option></select>
+      </label>
+      <p id="msg" role="status" aria-live="polite"></p>
+      <button class="btn" type="submit">ثبت درخواست رزرو</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <p>بازار قدیم · تلفن: ۰۲۱۰۰۰۰۰۰۰۰</p>
+  <p>© چای‌خانه‌ی گل نرگس (نمونه‌کار)</p>
+</footer>
+
+<script>
+  const tabs = document.querySelectorAll('.tabs button');
+  const rows = document.querySelectorAll('.row');
+  tabs.forEach(b => b.addEventListener('click', () => {
+    tabs.forEach(t => t.setAttribute('aria-selected', t === b));
+    rows.forEach(r => r.hidden = b.dataset.f !== 'all' && r.dataset.c !== b.dataset.f);
+  }));
+
+  const f = document.getElementById('rf');
+  const msg = document.getElementById('msg');
+  const d = document.getElementById('date');
+  d.min = new Date().toISOString().split('T')[0];
+
+  const toEn = s => s.replace(/[۰-۹]/g, x => '۰۱۲۳۴۵۶۷۸۹'.indexOf(x));
+  function say(t, err) { msg.textContent = t; msg.className = err ? 'err' : 'ok'; }
+
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const n = f.fname.value.trim();
+    const t = toEn(f.tel.value.trim());
+    if (n.length < 2) return say('لطفاً نام خود را وارد کنید.', true);
+    if (!/^09\d{9}$/.test(t)) return say('شماره‌ی موبایل باید ۱۱ رقم باشد و با ۰۹ شروع شود.', true);
+    if (!d.value) return say('تاریخ مراجعه را انتخاب کنید.', true);
+    say(n + ' عزیز، درخواست رزرو شما ثبت شد. برای تأیید با شما تماس می‌گیریم.');
+    f.reset();
+  });
+</script>
+
+</body>
+        </html>
